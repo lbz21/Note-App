@@ -1,0 +1,121 @@
+:root {
+    --background-color: #FFC700;
+    --bs-primary-rgb: #12296c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--bs-primary-rgb);
+    font-weight: 300;
+    font-size: 1.2rem;
+    background-image: url(../img/noise-bg.png);
+    background-size: cover; /* Ensures the background fits the screen */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', cursive;
+    font-weight: 800;
+    position: relative;
+    z-index: 2; /* Ensures text stays above background images */
+}
+
+.container-fluid-custom {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Buttons */
+
+.btn {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 2rem;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-primary-rgb);
+    --bs-btn-border-color: var(--bs-primary-rgb);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0043a8;
+    --bs-btn-hover-border-color: #0043a8;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--bs-primary-rgb);
+    --bs-btn-border-color: var(--bs-primary-rgb);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0043a8;
+    --bs-btn-hover-border-color: #0043a8;
+}
+
+.pagination {
+    --bs-pagination-color: var(--bs-primary-rgb);
+    --bs-pagination-active-bg: var(--bs-primary-rgb);
+    --bs-pagination-active-border-color: var(--bs-primary-rgb);
+}
+
+/* Home */
+@media (min-width: 1200px) {
+    .home {
+        position: relative;
+        background: 
+            url('../img/noise-bg.png') left top repeat,
+            var(--background-color);
+        background-attachment: fixed;
+    }
+
+    .home::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30%;
+        height: auto;
+        background: url('../img/human-1.svg') no-repeat left bottom;
+        background-size: contain;
+        z-index: 1; /* Behind text */
+    }
+
+    .home::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30%;
+        height: auto;
+        background: url('../img/human-2.svg') no-repeat right bottom;
+        background-size: contain;
+        z-index: 1; /* Behind text */
+    }
+}
+
+/* Title Styling */
+.home-title {
+    position: relative;
+    z-index: 2; /* Ensures the title is above other elements */
+    text-align: center;
+    margin: 100px 0;
+}
+
+.home-title::before, 
+.home-title::after {
+    content: url('../img/stars.svg');
+    position: absolute;
+    z-index: 1; /* Behind the text */
+}
+
+.home-title::before {
+    left: -50px;
+    top: -30px;
+}
+
+.home-title::after {
+    right: -50px;
+    bottom: -30px;
+}
